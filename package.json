@@ -1,34 +1,30 @@
 {
-  "name": "intentjs",
-  "version": "0.0.0",
-  "description": "intentjs ========",
-  "main": "intent.js",
-  "directories": {
-    "test": "tests"
-  },
-  "dependencies": {
-    "karma": "~0.12.6"
+  "name": "share-dialog",
+  "version": "0.0.1",
+  "description": "Share dialogs for the most common websites",
+  "keywords": [
+    "intent", "share", "dialog"
+  ],
+  "scripts": {
+    "test": "tap test.js"
   },
   "devDependencies": {
-    "karma": "~0.12.6",
-    "phantomjs": "~1.9.7-3",
-    "karma-phantomjs-launcher": "~0.1.4",
-    "karma-jasmine": "~0.1.5"
+    "tap": "~0.4.11"
   },
-  "scripts": {
-    "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS"
+  "homepage": "https://github.com/vweevers/share-dialog",
+  "bugs": {
+    "url": "https://github.com/vweevers/share-dialog/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/andrefarzat/intentjs.git"
+    "url": "git://github.com/vweevers/share-dialog.git"
   },
-  "keywords": [
-    "intent"
+  "authors": [
+    "Vincent Weevers",
+    "Andre Farzat"
   ],
-  "author": "Andre Farzat",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/andrefarzat/intentjs/issues"
-  },
-  "homepage": "https://github.com/andrefarzat/intentjs"
+  "dependencies": {
+    "xtend": "~3.0.0"
+  }
 }
