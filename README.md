@@ -51,14 +51,14 @@ Get current parameters.
 Overwrite window configuration. Service methods may also set configuration values, see below. The default configuration is:
 
 ```javascript
-  { toolbar: 0
-  , status: 0
-  , width: 650
-  , height: 306
-  , top: function(config)
-    { return screen.availHeight/2 - config.height/2 }
-  , left: function(config)
-    { return screen.availWidth/2  - config.width/2  }  
+{ toolbar: 0
+, status: 0
+, width: 650
+, height: 306
+, top: function(config)
+  { return screen.availHeight/2 - config.height/2 }
+, left: function(config)
+  { return screen.availWidth/2  - config.width/2  }  
 }
 ```
 
@@ -98,7 +98,10 @@ Dialog.facebook().params({app_id: 'my_app_id'})
 
 #### Tumblr
 
+Share a link:
 `Dialog.tumblr.link(url [, name, description])`
+
+Share a photo:
 `Dialog.tumblr.photo(source [, caption, clickthru])`
 
 *[Documentation](http://www.tumblr.com/buttons)*
