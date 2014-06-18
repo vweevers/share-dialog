@@ -30,7 +30,11 @@ ShareDialog.prototype.config = function(config) {
 }
 
 ShareDialog.prototype.get = function() {
-  var params = join(this._params, '&', encodeURIComponent)
+  var params = join(this._params, '&', function(s){
+    if (s.indexOf('%')>-1)
+      s = decodeURIComponent(s)
+    return encodeURIComponent(s)
+  })
   return this._url + '?' + params
 }
 

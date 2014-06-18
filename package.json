@@ -1,6 +1,6 @@
 {
   "name": "share-dialog",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Share dialogs for the most common websites",
   "keywords": [
     "intent", "share", "dialog"
