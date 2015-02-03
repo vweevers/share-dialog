@@ -6,7 +6,9 @@
     "intent", "share", "dialog"
   ],
   "scripts": {
-    "test": "tap test.js"
+    "test": "tap test.js",
+    "browserify": "browserify index.js -o build.js",
+    "minify": "browserify index.js | uglifyjs -c -o build.min.js"
   },
   "devDependencies": {
     "tap": "~0.4.11"
