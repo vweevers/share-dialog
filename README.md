@@ -1,8 +1,6 @@
 # share-dialog
 
-> Share dialogs for the most common websites
-
-Supports Facebook, Twitter, Pinterest, Google Plus and Tumblr.
+Creates share dialogs for Facebook, Twitter, Pinterest, Google Plus, Tumblr and LinkedIn.
 
 ## Install
 
@@ -48,12 +46,12 @@ Overwrite GET parameters of share URL.
 Get current parameters.
 
 **dialog.config(`{ object }`)**
-Overwrite window configuration. Service methods may also set configuration values, see below. The default configuration is:
+Overwrite window configuration. The default configuration is:
 
 ```javascript
 { toolbar: 0
 , status: 0
-, width: 650
+, width: 650  // differs per service
 , height: 306
 , top: function(config)
   { return screen.availHeight/2 - config.height/2 }
@@ -121,9 +119,13 @@ Share a photo:
 - `hashtags` (array): hashtags to append to tweet, e.g. \['food', 'monsters'\] (optional)
 - `related` (array): related Twitter usernames (optional)
 
-*Default config*: `{width: 550, height: 420}`
-
 *[Documentation](https://dev.twitter.com/docs/intents#tweet-intent)*
+
+#### LinkedIn
+
+`Dialog.linkedIn(url[, title, source, summary])`
+
+*[Documentation](https://developer.linkedin.com/documents/share-linkedin)*
 
 ## Todo
 

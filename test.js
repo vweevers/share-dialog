@@ -59,3 +59,17 @@ test("tumblr photo", function(t){
   t.equal(intent.get(), 'https://www.tumblr.com/share/photo?source=http%3A%2F%2Fexample.com%2Ffoo.jpg&caption=Some%20image')
   t.end()
 })
+
+test("linkedin", function(t) {
+  var dialog = Dialog.linkedIn('http://example.com/foo', 'title', 'source', 'summary');
+  t.equal(dialog.get(), 'https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fexample.com%2Ffoo&title=title&source=source&summary=summary')
+
+  var dialog2 = Dialog.linkedIn('http://example.com/foo');
+  t.equal(dialog2.get(), 'https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fexample.com%2Ffoo')
+
+  t.throws(function(){
+    Dialog.linkedIn().get()
+  })
+
+  t.end()
+})

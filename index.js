@@ -97,6 +97,20 @@ ShareDialog.twitter = function(url, text, via, in_reply_to, hashtags, related) {
   return dialog.config({width: 550, height: 420})
 }
 
+ShareDialog.linkedIn = function(url, title, source, summary) {
+  var dialog = new ShareDialog('https://www.linkedin.com/shareArticle')
+
+  dialog.params({
+    mini: 'true',
+    url: url || required,
+    title: title || null,
+    source: source || null,
+    summary: summary || null
+  })
+
+  return dialog.config({width: 520, height: 570})
+}
+
 ShareDialog.facebook = function(app_id, href, redirect_uri) {
   var dialog = new ShareDialog('https://facebook.com/dialog/share')
 
