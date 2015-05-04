@@ -8,12 +8,15 @@
     "dialog"
   ],
   "scripts": {
-    "test": "tap test.js",
+    "test": "tape test.js",
     "browserify": "browserify index.js -o build.js",
     "minify": "browserify index.js | uglifyjs -c -o build.min.js"
   },
+  "dependencies": {
+    "xtend": "~4.0.0"
+  },
   "devDependencies": {
-    "tap": "~0.4.11"
+    "tape": "~4.0.0"
   },
   "homepage": "https://github.com/vweevers/share-dialog",
   "bugs": {
@@ -27,8 +30,5 @@
     "Vincent Weevers",
     "Andre Farzat"
   ],
-  "license": "MIT",
-  "dependencies": {
-    "xtend": "~3.0.0"
-  }
+  "license": "MIT"
 }

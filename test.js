@@ -1,5 +1,5 @@
-var test = require('tap').test
-var Dialog = require('./')
+var test = require('tape')
+  , Dialog = require('./')
 
 function stub(open) {
   global.screen || (global.screen = {
