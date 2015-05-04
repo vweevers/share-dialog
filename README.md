@@ -84,9 +84,15 @@ Dialog.facebook().params({app_id: 'my_app_id'})
 
 #### Facebook
 
+**Share dialog** (`facebook.com/dialog/share?app_id=..`)
+
 `Dialog.facebook(app_id, href, redirect_uri)`
 
 *[Documentation](https://developers.facebook.com/docs/sharing/reference/share-dialog)*
+
+**Legacy sharer.php** (`facebook.com/sharer/sharer.php?u=..`)
+
+`Dialog.facebook(u)` where `u` is the URL to share. Does not require an app id.
 
 #### Pinterest
 

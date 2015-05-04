@@ -111,8 +111,22 @@ ShareDialog.linkedIn = function(url, title, source, summary) {
   return dialog.config({width: 520, height: 570})
 }
 
+// facebook(app_id, href, redirect_uri) returns facebook.com/dialog/share?..
+// facebook(href) returns facebook.com/sharer/sharer.php?u=..
 ShareDialog.facebook = function(app_id, href, redirect_uri) {
-  var dialog = new ShareDialog('https://facebook.com/dialog/share')
+  var dialog;
+
+  // Legacy sharer.php (doesn't require an app id)
+  if (href == null && redirect_uri == null) {
+    href = app_id
+    dialog = new ShareDialog('https://facebook.com/sharer/sharer.php')
+    return dialog.params({
+      u: href || required
+    })
+  }
+
+  // Modern dialog
+  dialog = new ShareDialog('https://facebook.com/dialog/share')
 
   return dialog.params({
     display: 'popup',

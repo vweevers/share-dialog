@@ -20,6 +20,18 @@ test("facebook", function(t) {
   t.end()
 })
 
+test("facebook legacy sharer.php", function(t) {
+  var intent = Dialog.facebook('https://beep.com')
+
+  t.equal(intent.get(), 'https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fbeep.com')
+  t.equal(intent.config().width, 650)
+
+  intent.params({u: 'https://boop.org'})
+  t.equal(intent.get(), 'https://facebook.com/sharer/sharer.php?u=https%3A%2F%2Fboop.org')
+
+  t.end()
+})
+
 test("twitter", function(t) {
   var dialogUrl = 'https://twitter.com/intent/tweet?url=http%3A%2F%2Fgoogle.com&via=someuser&text=Some%20tweet&hashtags=hash%2Ctags'
   var intent = Dialog.twitter('http://google.com', 'Some tweet', 'someuser')
