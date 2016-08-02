@@ -35,7 +35,7 @@ ShareDialog.prototype.get = function() {
       s = decodeURIComponent(s)
     return encodeURIComponent(s)
   })
-  return this._url + '?' + params
+  return this._url + ((params!='') ? '?' + params : '');
 }
 
 ShareDialog.prototype.open = function() {
