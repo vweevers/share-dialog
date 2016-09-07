@@ -38,11 +38,11 @@ ShareDialog.prototype.get = function() {
   return params ? this._url + '?' + params : this._url;
 }
 
-ShareDialog.prototype.open = function() {
+ShareDialog.prototype.open = function(name) {
   var url = this.get()
   var config =  join(this._config, ',')
 
-  window.open(url, 'sharer', config)
+  window.open(url, name || 'sharer', config)
 };
 
 ShareDialog.tumblr = {
